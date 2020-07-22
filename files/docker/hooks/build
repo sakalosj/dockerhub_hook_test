@@ -1,4 +1,6 @@
 #!/bin/bash
 env
 echo docker build -t $IMAGE_NAME -f $DOCKERFILE_PATH --build-arg SOURCE_BRANCH=$SOURCE_BRANCH .
+pwd
+ls -l
 docker build -t $IMAGE_NAME -f $DOCKERFILE_PATH --build-arg SOURCE_BRANCH=$SOURCE_BRANCH .
