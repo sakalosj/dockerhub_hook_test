@@ -1,0 +1,14 @@
+# Celery worker which runs tasks (packit) from the web service
+
+FROM fedora:32
+
+ARG SOURCE_BRANCH
+
+ENV LANG=en_US.UTF-8 \
+    ANSIBLE_PYTHON_INTERPRETER=/usr/bin/python3 \
+    ANSIBLE_STDOUT_CALLBACK=debug \
+    USER=packit \
+    HOME=/home/packit \
+    PS_PATH=/src-packit-service
+
+RUN echo $SOURCE_BRANCH
