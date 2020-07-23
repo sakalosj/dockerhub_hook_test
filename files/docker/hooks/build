@@ -1,5 +1,11 @@
 #!/bin/bash
 env
+echo $@
+for var in "$@"
+do
+    echo "$var"
+done
+cd /src/${BUILD_CODE}/${BUILD_PATH}
 echo docker build -t $IMAGE_NAME -f $DOCKERFILE_PATH --build-arg SOURCE_BRANCH=$SOURCE_BRANCH .
 pwd
 ls -l
